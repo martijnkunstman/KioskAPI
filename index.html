@@ -10,7 +10,7 @@
 <body>
 
     <script>
-        fetch('./api/product.php?id=4')
+        fetch('./api/product?id=4')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

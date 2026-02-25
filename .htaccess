@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Ensure API directory structure works without .php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
+
+# Optional: Handle deeper nesting specifically if needed
+# RewriteRule ^api/products/(.*)$ api/products/$1.php [NC,L]
+# RewriteRule ^api/orders/(.*)$ api/orders/$1.php [NC,L]
