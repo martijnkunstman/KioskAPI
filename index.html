@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test API</title>
+</head>
+
+<body>
+
+    <script>
+        fetch('./api/product.php?id=4')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Menu data:', data);
+                // Process menu data here
+            })
+            .catch(error => console.error('Error fetching menu:', error));
+    </script>
+
+</body>
+
+</html>
